@@ -27,7 +27,7 @@
                      </image>
                   </ImageView>
                   <Region prefHeight="55.0" prefWidth="268.0" />
-                  <Button id="homeButton" fx:id="homeButton" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-radius: 10;" text="Home">
+                  <Button id="homeButton" fx:id="homeButton" mnemonicParsing="false" onAction="#goToHome" style="-fx-background-radius: 10; -fx-cursor: hand;" text="Home">
                      <font>
                         <Font name="Gadugi Bold" size="16.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
                      </padding>
                   </Button>
-                  <Button id="menuButton" fx:id="menuButton" mnemonicParsing="false" onAction="#goToMenu" style="-fx-background-radius: 10;" text="Menu">
+                  <Button id="menuButton" fx:id="menuButton" mnemonicParsing="false" onAction="#goToMenu" style="-fx-background-radius: 10; -fx-cursor: hand;" text="Menu">
                      <font>
                         <Font name="Gadugi Bold" size="16.0" />
                      </font>
@@ -43,7 +43,7 @@
                         <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
                      </padding>
                   </Button>
-                  <Button id="loginButton" fx:id="loginButton" mnemonicParsing="false" onAction="#goToLogin" style="-fx-background-radius: 10;" text="Login">
+                  <Button id="loginButton" fx:id="loginButton" mnemonicParsing="false" onAction="#goToLogin" style="-fx-background-radius: 10; -fx-cursor: hand;" text="Login">
                      <font>
                         <Font name="Gadugi Bold" size="16.0" />
                      </font>
