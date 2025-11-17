@@ -19,5 +19,17 @@ public class User {
         this.password = password;
         this.address = address;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 }
 

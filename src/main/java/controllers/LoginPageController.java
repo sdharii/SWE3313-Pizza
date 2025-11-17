@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import models.User;
 import models.UserAccess;
@@ -52,7 +53,17 @@ public class LoginPageController {
         if (user != null) {
             System.out.println("Login successful!");
             Navigation.goTo("menupage.fxml");
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Login Successful");
+            successAlert.setHeaderText("Login Successful");
+            successAlert.setContentText("Welcome back, " + user.getFirstName()+"!");
+            successAlert.showAndWait();
         } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Failed");
+            alert.setHeaderText("Login Failed!");
+            alert.setContentText("Invalid phone or password!");
+            alert.showAndWait();
             System.out.println("Invalid phone or password.");
         }
 
