@@ -3,8 +3,9 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
-
-import java.awt.*;
+import models.User;
+import models.UserAccess;
+import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class LoginPageController {
@@ -40,10 +41,20 @@ public class LoginPageController {
     private PasswordField passwordInput;
 
     @FXML
-    private void handleLogin() {
+    private void handleLogin(ActionEvent event) throws IOException{
         System.out.println("Verifying login...");
         String username = phoneNumber.getText();
         String password = passwordInput.getText();
+
+        UserAccess userAccess = new UserAccess();
+        User user = userAccess.login(username, password);
+
+        if (user != null) {
+            System.out.println("Login successful!");
+            Navigation.goTo("menupage.fxml");
+        } else {
+            System.out.println("Invalid phone or password.");
+        }
 
     }
 }
