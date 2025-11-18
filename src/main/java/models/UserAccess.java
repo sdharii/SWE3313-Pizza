@@ -35,4 +35,7 @@ public class UserAccess {
         // If login fails, return null
         return null;
     }
+    public User signup(String fullName, String phone, String password) {
+        return null;
+    }
 }
