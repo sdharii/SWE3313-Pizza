@@ -67,6 +67,7 @@ public class LoginPageController {
 
         if (user != null) {
             failedAttempts = 0; // Resets attempt counter
+
             System.out.println("Login successful!");
             Navigation.goTo("menupage.fxml");
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);

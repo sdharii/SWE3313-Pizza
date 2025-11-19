@@ -15,8 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SignupPageController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #ff3131;">
          <children>
@@ -59,7 +58,7 @@
                   <Font name="Gadugi" size="30.0" />
                </font>
             </Text>
-            <TextField fx:id="FullName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="244.0" promptText="Full Name">
+            <TextField fx:id="fullName" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="244.0" promptText="Full Name">
                <font>
                   <Font name="Gadugi" size="12.0" />
                </font>
@@ -100,7 +99,7 @@
                   <Insets top="-8.0" />
                </VBox.margin>
             </Text>
-            <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="34.0" prefWidth="171.0" style="-fx-background-color: #ff3131; -fx-background-radius: 10; -fx-cursor: hand;" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#handleSignup" prefHeight="34.0" prefWidth="171.0" style="-fx-background-color: #ff3131; -fx-background-radius: 10; -fx-cursor: hand;" text="Sign Up" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Gadugi Bold" size="18.0" />
                </font>
