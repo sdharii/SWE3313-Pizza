@@ -2,18 +2,27 @@ package models;
 
 public class CartItem {
 
-    private String description;   // "Large Pepperoni, Thin Crust"
+    private String category;   // "Large Pepperoni, Thin Crust"
     private int quantity;
     private double unitPrice;
+    private MenuItem item;
 
-    public CartItem(String description, int quantity, double unitPrice) {
+    /*public CartItem(String description, int quantity, double unitPrice) {
         this.description = description;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
+    }*/
+    public CartItem(MenuItem item, String category, int quantity, double unitPrice){
+        this.item = item;
+        this.category = category;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
     }
-
-    public String getDescription() {
-        return description;
+    public MenuItem getItem(){
+        return item;
+    }
+    public String getCategory() {
+        return category;
     }
 
     public int getQuantity() {
@@ -26,5 +35,8 @@ public class CartItem {
 
     public double getLineTotal() {
         return unitPrice * quantity;
+    }
+    public void updateQuantity( int newQuantity){
+        this.quantity = newQuantity;
     }
 }
