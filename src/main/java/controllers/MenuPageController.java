@@ -31,6 +31,11 @@ public class MenuPageController implements Initializable {
         System.out.print("Login button was clicked!");
         Navigation.goTo("loginpage.fxml");
     }
+    @FXML
+    private void goToCustomization(ActionEvent event) throws IOException {
+        System.out.println("Heading to customization page...");
+        Navigation.goTo("customizationpage.fxml");
+    }
 
     // Pizza Buttons -> Allows menu to switch depending on pizza, bev., desserts
     @FXML private TilePane menuTilePane;
