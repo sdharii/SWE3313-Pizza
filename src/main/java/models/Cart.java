@@ -1,40 +1,44 @@
 package models;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
-    private List<CartItem> items = new ArrayList<>();
-    public void addItem(MenuItem menuItem, int quantity){
-        for (CartItem cartItem: items){
-            if (cartItem.getItem().getItemID()== menuItem.getItemID()){
-                cartItem.updateQuantity(cartItem.getQuantity()+ quantity);
-                return;
-            }
+
+    private static Cart instance;
+
+    private List<Pizza> items = new ArrayList<>();
+
+    private Cart() {}
+
+    public static Cart getInstance() {
+        if (instance == null) {
+            instance = new Cart();
         }
-        CartItem newItem = new CartItem( menuItem, menuItem.getCategory(), quantity, menuItem.getPrice());
-        items.add(newItem);
+        return instance;
     }
-    public void removeItem (int itemID){
-        items.removeIf(cartItem -> cartItem.getItem().getItemID() == itemID);
+
+    public void add(Pizza pizza) {
+        items.add(pizza);
     }
-    public void clear(){
-        items.clear();
+
+    public void remove(Pizza pizza) {
+        items.remove(pizza);
     }
-    public List <CartItem> getItems(){
+
+    public List<Pizza> getItems() {
         return items;
     }
-    public double getSubtotal(){
-        double sum = 0;
-        for(CartItem item: items){
-            sum += item.getLineTotal();
+
+    public double getTotal() {
+        double total = 0;
+        for (Pizza p : items) {
+            total += p.getPrice();
         }
-        return sum;
+        return total;
     }
-    public double getTax(){
-        return getSubtotal()* 0.03 ;// a 3% tax
-    }
-    public  double getTotal(){
-        return getSubtotal() +getTax();
+
+    public void clear() {
+        items.clear();
     }
 }
