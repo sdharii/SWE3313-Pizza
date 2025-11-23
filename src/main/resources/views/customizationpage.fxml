@@ -28,8 +28,8 @@
                         <Image url="@../pizzaLogo.png" />
                      </image>
                   </ImageView>
-                  <Region prefHeight="55.0" prefWidth="110.0" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Customize Your Pizza!" wrappingWidth="238.14885711669922">
+                  <Region prefHeight="55.0" prefWidth="120.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Customization Page" wrappingWidth="238.14885711669922">
                      <font>
                         <Font name="Gadugi Bold" size="21.0" />
                      </font>
@@ -38,7 +38,7 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <ImageView fitHeight="108.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="itemPicture" fitHeight="108.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets bottom="2.0" left="20.0" top="2.0" />
                      </HBox.margin>
@@ -48,12 +48,12 @@
                   </ImageView>
                   <VBox prefHeight="83.0" prefWidth="340.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="{Name}" textAlignment="CENTER" wrappingWidth="336.5367488861084">
+                        <Text fx:id="itemName" strokeType="OUTSIDE" strokeWidth="0.0" text="{Name}" textAlignment="CENTER" wrappingWidth="336.5367488861084">
                            <font>
                               <Font name="Gadugi Bold" size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="{Description}" textAlignment="CENTER" wrappingWidth="339.7367000579834">
+                        <Text fx:id="itemDescription" strokeType="OUTSIDE" strokeWidth="0.0" text="{Description}" textAlignment="CENTER" wrappingWidth="339.7367000579834">
                            <font>
                               <Font name="Gadugi" size="12.0" />
                            </font>
@@ -61,7 +61,7 @@
                               <Insets top="14.0" />
                            </VBox.margin>
                         </Text>
-                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-border-width: 2; -fx-background-color: #fffffff; -fx-background-radius: 6; -fx-cursor: hand;" text="{Price} Add to Cart" textAlignment="CENTER">
+                        <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-border-width: 2; -fx-background-color: #fffffff; -fx-background-radius: 6; -fx-cursor: hand;" text="{Price} Add to Cart" textAlignment="CENTER">
                            <font>
                               <Font name="Gadugi" size="12.0" />
                            </font>

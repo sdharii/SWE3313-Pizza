@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import models.MenuItem;
 
 import java.io.IOException;
 
@@ -24,20 +25,20 @@ public class Navigation {
 
 
     // Switches to different page(s)
-    public static void goTo(String fxmlFile, String itemType) throws IOException {
+    public static void goTo(String fxmlFile, MenuItem item) throws IOException {
         FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/views/"+fxmlFile));
         Parent root = loader.load();
 
         // Grabbing controller
         Object controller = loader.getController();
 
-        // If controller has a setItemType method (customizationPage), pass value
+        // If controller has a setMenuItem method (customizationPage), pass value
         try {
             controller.getClass()
-                    .getMethod("setItemType",String.class)
-                    .invoke(controller,itemType);
+                    .getMethod("setMenuItem",MenuItem.class)
+                    .invoke(controller,item);
         } catch (NoSuchMethodException e) {
-            System.out.println("Controller doesn't have a setItemType method!");
+            System.out.println("Controller doesn't have a setMenuItem method!");
         } catch (Exception e) {
             e.printStackTrace();
         }

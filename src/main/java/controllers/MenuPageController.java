@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import models.MenuItem;
 import javafx.scene.layout.TilePane;
 import java.util.List;
 import javafx.scene.control.Button;
@@ -99,16 +100,66 @@ public class MenuPageController implements Initializable {
     }
     // Redirecting to appropriate customization pages
     @FXML
-    private void customizePizza() throws IOException {
-        Navigation.goTo("customizationpage.fxml","pizza");
+    private void selectPepperoniDeluxe(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Pepperoni Deluxe","Pizza",6.49);
+        Navigation.goTo("customizationpage.fxml", item);
     }
     @FXML
-    private void customizeBeverage() throws IOException {
-        Navigation.goTo("customizationpage.fxml","beverage");
+    private void selectCreateYourOwn(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Create Your Own!","Pizza",5.99);
+        Navigation.goTo("customizationpage.fxml", item);
     }
     @FXML
-    private void customizeDessert() throws IOException {
-        Navigation.goTo("customizationpage.fxml","dessert");
+    private void selectUltimateSupreme(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Ultimate Supreme","Pizza",6.49);
+        Navigation.goTo("customizationpage.fxml", item);
     }
+    @FXML
+    private void selectCheese(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Cheese Pizza","Pizza",6.49);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectCoke(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Coke","Beverage",1.99);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectSprite(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Sprite","Beverage",1.99);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectFanta(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Fanta","Beverage",1.99);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectChunkCookie(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Chocolate Chunk Cookie","Dessert",2.49);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectCinnamonRoll(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Cinnamon Roll","Dessert",2.99);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void selectMoltenLavaCake(ActionEvent event) throws  IOException {
+        MenuItem item = new MenuItem(1,"Molten Lava Cake","Dessert",3.49);
+        Navigation.goTo("customizationpage.fxml", item);
+    }
+//    @FXML
+//    private void customizePizza() throws IOException {
+//        Navigation.goTo("customizationpage.fxml","pizza");
+//    }
+//    @FXML
+//    private void customizeBeverage() throws IOException {
+//        Navigation.goTo("customizationpage.fxml","beverage");
+//    }
+//    @FXML
+//    private void customizeDessert() throws IOException {
+//        Navigation.goTo("customizationpage.fxml","dessert");
+//    }
 
 }

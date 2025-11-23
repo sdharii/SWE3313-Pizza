@@ -3,13 +3,19 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import models.MenuItem;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class CustomizationPageController implements Initializable {
     // Navigation Methods
@@ -45,20 +51,22 @@ public class CustomizationPageController implements Initializable {
     }
 
     // Disabling/Enabling customization sections based on item type
-    private String itemType;
+    private MenuItem currentItem;
+    @FXML
+    private Text itemName;
+    @FXML
+    private Text itemDescription;
+    @FXML
+    private ImageView itemPicture;
 
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
-        System.out.println("Item type:" + itemType);
 
-        updateUI();
-    }
+    public void setMenuItem(MenuItem item) {
+        this.currentItem = item;
+        itemName.setText(item.getName());
+        System.out.println("Item type:" + item.getCategory());
 
-    private void updateUI() {
-        if (itemType == null)
-            return;
-
-        if (itemType.equals("pizza")) {
+        if (item.getCategory().equalsIgnoreCase("Pizza")) {
+            itemDescription.setText("Customize your pizza with toppings, sauce, and crust!");
             sizeVbox.setVisible(true);
             sizeVbox.setManaged(true);
             crustVbox.setVisible(true);
@@ -67,8 +75,8 @@ public class CustomizationPageController implements Initializable {
             sauceVbox.setManaged(true);
             toppingVbox.setVisible(true);
             toppingVbox.setManaged(true);
-        }
-        if (itemType.equals("beverage") || itemType.equals("dessert")) {
+    } else {
+            itemDescription.setText("Please adjust the quantity!");
             sizeVbox.setVisible(false);
             sizeVbox.setManaged(false);
             crustVbox.setVisible(false);
@@ -78,5 +86,30 @@ public class CustomizationPageController implements Initializable {
             toppingVbox.setVisible(false);
             toppingVbox.setManaged(false);
         }
+
+        String imagePath;
+        switch (item.getCategory().toLowerCase()) {
+            case "pizza":
+                imagePath = "/cus_Pizza.png";
+                break;
+            case "beverage":
+                imagePath = "/cus_bev.png";
+                break;
+            case "dessert":
+                imagePath = "/cus_dessert.png";
+                break;
+            default:
+                imagePath = "/cus_Pizza.png";
+        }
+        itemPicture.setImage(new Image(getClass().getResourceAsStream(imagePath)));
+
     }
+    // Allows quantity to be updated
+    @FXML private Button decreaseButton;
+    @FXML private Button increaseButton;
+    @FXML private Button addToCartButton;
+    @FXML private Text quantityText;
+
+    private int quantity = 1;
+
 }
