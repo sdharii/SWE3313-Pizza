@@ -12,11 +12,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import models.CartItem;
 import models.MenuItem;
+import models.Cart;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -194,6 +198,35 @@ public class CustomizationPageController implements Initializable {
     @FXML
     private void decreaseQuantity(ActionEvent event) {
         changeQuantity(-1);
+    }
+    // Adding items to cart
+    @FXML void addToCart(ActionEvent event) {
+        String buttonText = addToCartButton.getText();
+        double total = Double.parseDouble(buttonText.split(" ")[0].replace("$",""));
+        // Finding all toppings selected
+        if (currentItem.getCategory().equalsIgnoreCase("Pizza")) {
+            List<String> selectedToppings = new ArrayList<>();
+            for (Node node: toppingSelection.getChildren()) {
+                if (node instanceof CheckBox) {
+                    CheckBox cb = (CheckBox) node;
+                    if (cb.isSelected()) selectedToppings.add(cb.getText());
+                }
+            }
+            // Creating Pizza CartItem
+            CartItem cartItem = new CartItem(currentItem.getName(),currentItem.getCategory(),quantity,total, sizeSelection.getValue(),crustSelection.getValue(),sauceSelection.getValue(),selectedToppings);
+            Cart.getInstance().addItem(cartItem);
+        } else {
+            // Creating Beverage/Dessert CartItem
+            CartItem cartItem = new CartItem(currentItem.getName(), currentItem.getCategory(), quantity, total);
+            Cart.getInstance().addItem(cartItem);
+        }
+        System.out.println("Added item to cart!" );
+        // Redirecting user to menu page
+        try {
+            Navigation.goTo("menupage.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

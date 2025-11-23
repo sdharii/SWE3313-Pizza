@@ -1,10 +1,34 @@
-//package models;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class Cart {
-//
+package models;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cart {
+    private static Cart instance;
+    private static  List<CartItem> cartItems = new ArrayList<>();
+
+    private Cart() {}
+
+    public static Cart getInstance() {
+        if (instance == null) {
+            instance = new Cart();
+        }
+        return instance;
+    }
+
+    public static void addItem(CartItem item) {
+        cartItems.add(item);
+    }
+
+    public static List<CartItem> getItems() {
+        return cartItems;
+    }
+    public static void clear() {
+        cartItems.clear();
+    }
+}
+
+
 //    private static Cart instance;
 //
 //    private List<Pizza> items = new ArrayList<>();

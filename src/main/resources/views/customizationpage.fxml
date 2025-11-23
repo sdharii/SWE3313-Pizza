@@ -61,7 +61,7 @@
                               <Insets top="14.0" />
                            </VBox.margin>
                         </Text>
-                        <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-border-width: 2; -fx-background-color: #fffffff; -fx-background-radius: 6; -fx-cursor: hand;" text="{Price} Add to Cart" textAlignment="CENTER">
+                        <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addToCart" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-border-width: 2; -fx-background-color: #fffffff; -fx-background-radius: 6; -fx-cursor: hand;" text="{Price} Add to Cart" textAlignment="CENTER">
                            <font>
                               <Font name="Gadugi" size="12.0" />
                            </font>
