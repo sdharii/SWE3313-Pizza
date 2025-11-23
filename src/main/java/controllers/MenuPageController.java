@@ -31,11 +31,11 @@ public class MenuPageController implements Initializable {
         System.out.print("Login button was clicked!");
         Navigation.goTo("loginpage.fxml");
     }
-    @FXML
-    private void goToCustomization(ActionEvent event) throws IOException {
-        System.out.println("Heading to customization page...");
-        Navigation.goTo("customizationpage.fxml");
-    }
+//    @FXML
+//    private void goToCustomization(ActionEvent event) throws IOException {
+//        System.out.println("Heading to customization page...");
+//        Navigation.goTo("customizationpage.fxml");
+//    }
 
     // Pizza Buttons -> Allows menu to switch depending on pizza, bev., desserts
     @FXML private TilePane menuTilePane;
@@ -97,4 +97,18 @@ public class MenuPageController implements Initializable {
         });
         menuTilePane.getChildren().setAll(dessertButtons);
     }
+    // Redirecting to appropriate customization pages
+    @FXML
+    private void customizePizza() throws IOException {
+        Navigation.goTo("customizationpage.fxml","pizza");
+    }
+    @FXML
+    private void customizeBeverage() throws IOException {
+        Navigation.goTo("customizationpage.fxml","beverage");
+    }
+    @FXML
+    private void customizeDessert() throws IOException {
+        Navigation.goTo("customizationpage.fxml","dessert");
+    }
+
 }

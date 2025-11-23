@@ -89,7 +89,7 @@
                      <children>
                         <TilePane fx:id="menuTilePane" prefHeight="302.0" prefWidth="588.0">
                            <children>
-                              <Button fx:id="createYourOwnButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
+                              <Button fx:id="createYourOwnButton" mnemonicParsing="false" onAction="#customizePizza" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
                                  <TilePane.margin>
                                     <Insets bottom="4.0" left="8.0" top="10.0" />
                                  </TilePane.margin>
@@ -120,7 +120,7 @@
                                     </VBox>
                                  </graphic>
                               </Button>
-                              <Button fx:id="pepperoniDeluxeButton" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
+                              <Button fx:id="pepperoniDeluxeButton" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#customizePizza" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -150,7 +150,7 @@
                                     <Insets bottom="4.0" top="10.0" />
                                  </TilePane.margin>
                               </Button>
-                              <Button fx:id="ultimateSupremeButton" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
+                              <Button fx:id="ultimateSupremeButton" layoutX="18.0" layoutY="20.0" mnemonicParsing="false" onAction="#customizePizza" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -177,7 +177,7 @@
                                     </VBox>
                                  </graphic>
                               </Button>
-                              <Button fx:id="cheesePizzaButton" layoutX="306.0" layoutY="20.0" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
+                              <Button fx:id="cheesePizzaButton" layoutX="306.0" layoutY="20.0" mnemonicParsing="false" onAction="#customizePizza" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -204,7 +204,7 @@
                                     </VBox>
                                  </graphic>
                               </Button>
-                              <Button fx:id="cokeButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="cokeButton" mnemonicParsing="false" onAction="#customizeBeverage" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -239,7 +239,7 @@
                                     <Insets left="8.0" top="10.0" />
                                  </TilePane.margin>
                               </Button>
-                              <Button fx:id="spriteButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="spriteButton" mnemonicParsing="false" onAction="#customizeBeverage" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -274,7 +274,7 @@
                                     <Insets bottom="4.0" top="10.0" />
                                  </TilePane.margin>
                               </Button>
-                              <Button fx:id="fantaButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="fantaButton" mnemonicParsing="false" onAction="#customizeBeverage" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -306,7 +306,7 @@
                                     </VBox>
                                  </graphic>
                               </Button>
-                              <Button fx:id="choChunkCookieButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="choChunkCookieButton" mnemonicParsing="false" onAction="#customizeDessert" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -341,7 +341,7 @@
                                     <Insets bottom="4.0" left="8.0" top="10.0" />
                                  </TilePane.margin>
                               </Button>
-                              <Button fx:id="cinnaRollButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="cinnaRollButton" mnemonicParsing="false" onAction="#customizeDessert" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
@@ -376,7 +376,7 @@
                                     <Insets bottom="4.0" top="10.0" />
                                  </TilePane.margin>
                               </Button>
-                              <Button fx:id="molLavaCakeButton" mnemonicParsing="false" onAction="#goToCustomization" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
+                              <Button fx:id="molLavaCakeButton" mnemonicParsing="false" onAction="#customizeDessert" prefHeight="143.0" prefWidth="284.0" style="-fx-background-radius: 10; -fx-background-color: #FFFFFF; -fx-border-color: #dedede; -fx-border-width: 3; -fx-border-radius: 10;" visible="false">
                                  <graphic>
                                     <VBox prefHeight="114.0" prefWidth="246.0">
                                        <children>
