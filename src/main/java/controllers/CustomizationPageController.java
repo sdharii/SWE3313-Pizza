@@ -3,7 +3,9 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import models.MenuItem;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,7 +49,7 @@ public class CustomizationPageController implements Initializable {
         sauceSelection.getItems().addAll("Marinara","Alfredo");
         sauceSelection.setValue("Marinara");
         // Crust Options
-        crustSelection.getItems().addAll("Thin, Regular, Pan");
+        crustSelection.getItems().addAll("Thin","Regular","Pan");
         crustSelection.setValue("Regular");
     }
 
@@ -62,6 +65,7 @@ public class CustomizationPageController implements Initializable {
 
     public void setMenuItem(MenuItem item) {
         this.currentItem = item;
+        this.basePrice = item.getPrice();
         itemName.setText(item.getName());
         System.out.println("Item type:" + item.getCategory());
 
@@ -102,6 +106,7 @@ public class CustomizationPageController implements Initializable {
                 imagePath = "/cus_Pizza.png";
         }
         itemPicture.setImage(new Image(getClass().getResourceAsStream(imagePath)));
+        updatePrice();
 
     }
     // Allows quantity to be updated
@@ -110,6 +115,85 @@ public class CustomizationPageController implements Initializable {
     @FXML private Button addToCartButton;
     @FXML private Text quantityText;
 
+
     private int quantity = 1;
+    private double basePrice;
+    @FXML
+    private void updatePrice() {
+        double totalPrice = basePrice;
+        // Calculate pizza based on toppings
+        if (currentItem.getCategory().equalsIgnoreCase("Pizza")) {
+            double toppingsCost = calculateToppingsCost();
+            double sizeCost = calculateSizeCost();
+            double crustCost = calculateCrustCost();
+            totalPrice += toppingsCost + sizeCost + crustCost;
+        }
+
+        totalPrice *= quantity;
+        // Update Price Button
+        addToCartButton.setText(String.format("$%.2f Add to Cart", totalPrice));
+    }
+
+    private double calculateToppingsCost() {
+        double cost = 0;
+
+        for (Node node: toppingSelection.getChildren()) {
+            if (node instanceof CheckBox) { // Checking if it's a checkbox
+                CheckBox cb = (CheckBox) node;
+                if (cb.isSelected()) {
+                    cost += 0.45; //Additional topping is $0.45
+                }
+            }
+        }
+        return cost;
+    }
+
+    private double calculateSizeCost() {
+        String size = sizeSelection.getValue();
+        switch (size) {
+            case "Small":
+                return 0.00;
+            case "Medium":
+                return 1.00;
+            case "Large":
+                return 2.00;
+            case "Extra Large":
+                return 3.00;
+            default:
+                return 0.00; // Default is small
+        }
+    }
+
+    private double calculateCrustCost () {
+        String crust = crustSelection.getValue();
+        switch (crust) {
+            case "Regular":
+                return 0.00;
+            case "Thin":
+                return 0.50;
+            case "Pan":
+                return 1.00;
+            default:
+                return 0.00; // Default is regular
+        }
+    }
+
+    private void changeQuantity(int num) {
+        quantity += num;
+
+        if (quantity < 1) {
+            quantity = 1; // Sets minimum to 1
+        }
+        quantityText.setText(String.valueOf(quantity));
+        updatePrice();
+    }
+    @FXML
+    private void increaseQuantity(ActionEvent event) {
+        changeQuantity(1);
+    }
+    @FXML
+    private void decreaseQuantity(ActionEvent event) {
+        changeQuantity(-1);
+    }
 
 }

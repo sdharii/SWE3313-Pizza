@@ -91,7 +91,7 @@
                                        </font>
                                     </Text>
                                     <Line endX="479.2928466796875" endY="4.971027465217048E-6" startX="-100.0" stroke="#b2b2b27a" strokeWidth="2.0" />
-                                    <ChoiceBox fx:id="sizeSelection" prefWidth="240.0" style="-fx-cursor: hand;">
+                                    <ChoiceBox fx:id="sizeSelection" onMouseClicked="#updatePrice" prefWidth="240.0" style="-fx-cursor: hand;">
                                        <VBox.margin>
                                           <Insets top="6.0" />
                                        </VBox.margin>
@@ -113,7 +113,7 @@
                                           <Insets top="2.0" />
                                        </VBox.margin>
                                     </Line>
-                                    <ChoiceBox fx:id="crustSelection" prefWidth="240.0" style="-fx-cursor: hand;">
+                                    <ChoiceBox fx:id="crustSelection" onMouseClicked="#updatePrice" prefWidth="240.0" style="-fx-cursor: hand;">
                                        <VBox.margin>
                                           <Insets top="6.0" />
                                        </VBox.margin>
@@ -159,7 +159,7 @@
                                     </Line>
                                     <TilePane fx:id="toppingSelection" prefHeight="200.0" prefRows="2" prefWidth="200.0">
                                        <children>
-                                          <CheckBox mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Cheese">
+                                          <CheckBox mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Cheese">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -170,7 +170,7 @@
                                                 <Insets left="4.0" right="10.0" top="2.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Onion">
+                                          <CheckBox layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Onion">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -181,7 +181,7 @@
                                                 <Insets left="4.0" right="10.0" top="2.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="126.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pineapple">
+                                          <CheckBox layoutX="126.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pineapple">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -192,7 +192,7 @@
                                                 <Insets left="4.0" right="10.0" top="2.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="236.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Jalepeno">
+                                          <CheckBox layoutX="236.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Jalepeno">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -203,7 +203,7 @@
                                                 <Insets left="4.0" right="10.0" top="2.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="347.0" layoutY="10.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Olives">
+                                          <CheckBox layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Olives">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -214,7 +214,7 @@
                                                 <Insets left="4.0" right="10.0" top="2.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="14.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pepperoni">
+                                          <CheckBox layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pepperoni">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -225,7 +225,7 @@
                                                 <Insets right="10.0" top="10.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="128.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Chicken">
+                                          <CheckBox layoutX="128.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Chicken">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -236,7 +236,7 @@
                                                 <Insets right="10.0" top="10.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="243.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Italian Sausage">
+                                          <CheckBox layoutX="243.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Italian Sausage">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -247,7 +247,7 @@
                                                 <Insets right="10.0" top="10.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="357.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Bacon">
+                                          <CheckBox layoutX="357.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Bacon">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -258,7 +258,7 @@
                                                 <Insets right="10.0" top="10.0" />
                                              </TilePane.margin>
                                           </CheckBox>
-                                          <CheckBox layoutX="472.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Beef">
+                                          <CheckBox layoutX="472.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Beef">
                                              <font>
                                                 <Font name="Gadugi" size="12.0" />
                                              </font>
@@ -290,19 +290,19 @@
             </ScrollPane>
             <HBox prefHeight="48.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="decreaseButton" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/decreaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
+                  <Button fx:id="decreaseButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#decreaseQuantity" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/decreaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="10.0" right="10.0" top="4.0" />
                      </HBox.margin>
                   </Button>
-                  <Text fx:id="quantity" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
+                  <Text fx:id="quantityText" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
                      <font>
                         <Font name="Gadugi" size="24.0" />
                      </font>
                      <HBox.margin>
                         <Insets top="4.0" />
                      </HBox.margin></Text>
-                  <Button fx:id="increaseButton" graphicTextGap="0.0" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/increaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
+                  <Button fx:id="increaseButton" graphicTextGap="0.0" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#increaseQuantity" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/increaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
                      <HBox.margin>
                         <Insets left="12.0" right="10.0" top="4.0" />
                      </HBox.margin>
