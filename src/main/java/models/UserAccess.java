@@ -69,4 +69,20 @@ public class UserAccess {
             return false;
         }
     }
+    public static boolean updateAddress(int customerID, String newAddress) {
+        String SQL = "UPDATE Customer SET Address = ? WHERE CustomerID = ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(SQL)) {
+            statement.setString(1, newAddress);
+            statement.setInt(2, customerID);
+
+            int rowsUpdated = statement.executeUpdate();
+            return rowsUpdated > 0; // true if it worked
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 }

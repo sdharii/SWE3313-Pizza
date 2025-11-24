@@ -9,6 +9,9 @@ import javafx.scene.layout.VBox;
 import models.Cart;
 import models.CartItem;
 import models.User;
+import models.UserAccess;
+
+import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -85,5 +88,30 @@ public class CartPageController implements Initializable {
     private void goToMenu(ActionEvent event) throws IOException {
         System.out.print("Menu button was clicked!");
         Navigation.goTo("menupage.fxml");
+    }
+    // Proceeding to checkout + saving address
+    @FXML
+    private void handleCheckout(ActionEvent event) throws IOException {
+        User currentUser = User.getInstance();
+
+        // Ensuring its only saving if delivery button is chosen
+        if (deliveryRadio.isSelected()) {
+            String newAddress = addressField.getText().trim();
+
+            if (newAddress.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Missing Address");
+                alert.setContentText("Please enter your delivery address.");
+                return;
+            }
+            // Updating user object
+            currentUser.setAddress(newAddress);
+            // Updating user in DB
+            UserAccess.updateAddress(currentUser.getCustomerID(), newAddress);
+
+            System.out.println("Address saved before checkout: "+newAddress);
+        }
+        // Sending user to check out
+        Navigation.goTo("checkoutpage.fxml");
     }
 }

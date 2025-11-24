@@ -26,6 +26,14 @@ public class Cart {
     public static void clear() {
         cartItems.clear();
     }
+
+    public static double getTotal() {
+        double total = 0;
+        for (CartItem item : cartItems) {
+            total += item.getPrice();
+        }
+        return total;
+    }
 }
 
 

@@ -1,30 +1,37 @@
 package models;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import database.DatabaseConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
 
 public class Order {
+    // Creating an order
+    public  static int placeOrder( int customerID, int paymentID, double total) {
+        int orderID = -1;
+        String SQL = "INSERT INTO \"Order\" (CustomerID, PaymentID, Total) VALUES (?,?,?)";
 
-    private static final Order INSTANCE = new Order();
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement statement = conn.prepareStatement(SQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
-    private final ObservableList<CartItem> items =
-            FXCollections.observableArrayList();
+            statement.setInt(1, customerID);
+            statement.setInt(2, paymentID);
+            statement.setDouble(3, total);
 
-    private Order() {}
+            statement.executeUpdate();
 
-    public static Order getInstance() {
-        return INSTANCE;
+            // Getting orderID
+            ResultSet result = statement.getGeneratedKeys();
+            if (result.next()) {
+                orderID = result.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return orderID;
     }
 
-    public ObservableList<CartItem> getItems() {
-        return items;
-    }
-
-    public void addItem(CartItem item) {
-        items.add(item);
-    }
-
-    public void clear() {
-        items.clear();
-    }
 }

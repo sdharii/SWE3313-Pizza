@@ -17,6 +17,10 @@ public class User {
         return instance;
     }
 
+    public static void setInstance(User user) {
+        instance = user;
+    }
+
     public User(int customerID, String firstName, String lastName, String phone, String password, String address) {
         this.customerID = customerID;
         this.firstName = firstName;
@@ -36,6 +40,13 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public int getCustomerID() {
+        return customerID;
     }
 }
 
