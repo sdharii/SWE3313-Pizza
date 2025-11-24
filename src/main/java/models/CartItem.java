@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CartItem {
@@ -34,6 +35,7 @@ public class CartItem {
         this.category = category;
         this.quantity = quantity;
         this.price = price;
+        this.toppings = new ArrayList<>();
     }
     public String getName() {return name;}
     public String getCategory() {
@@ -47,6 +49,9 @@ public class CartItem {
     public double getPrice() {
         return price;
     }
+    public String getSize() {return size;}
+    public String getCrust() {return crust;}
+    public List<String> getToppings() {return toppings;}
 
     public void setPrice(double price) {this.price = price;}
     public void setQuantity(int quantity) {this.quantity = quantity;}
@@ -54,4 +59,14 @@ public class CartItem {
     public void setCrust(String crust) {this.crust = crust;}
     public void setSauce(String sauce) {this.sauce = sauce;}
     public void setToppings(List<String> toppings) {this.toppings = toppings;}
+
+    public String getDetails() {
+        if (!category.equalsIgnoreCase("Pizza")) {
+            return "";
+        }
+
+        String toppingText = (toppings == null || toppings.isEmpty())
+                ? "No toppings" : String.join(", ", toppings);
+        return size + " | " + crust + " | " +sauce+" | "+toppingText;
+    }
 }

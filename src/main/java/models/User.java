@@ -11,6 +11,12 @@ public class User {
     private String address;
     private String password;
 
+    private static User instance;
+
+    public static User getInstance() {
+        return instance;
+    }
+
     public User(int customerID, String firstName, String lastName, String phone, String password, String address) {
         this.customerID = customerID;
         this.firstName = firstName;
