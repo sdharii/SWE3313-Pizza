@@ -9,6 +9,7 @@ import javafx.scene.layout.TilePane;
 import java.util.List;
 import javafx.scene.control.Button;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -152,6 +153,11 @@ public class MenuPageController implements Initializable {
     private void selectMoltenLavaCake(ActionEvent event) throws  IOException {
         MenuItem item = new MenuItem(1,"Molten Lava Cake","Dessert",3.49);
         Navigation.goTo("customizationpage.fxml", item);
+    }
+    @FXML
+    private void goToReceipt (ActionEvent event) throws IOException {
+        System.out.print("Heading to receipt page..");
+        Navigation.goTo("receiptpage.fxml");
     }
 //    @FXML
 //    private void customizePizza() throws IOException {

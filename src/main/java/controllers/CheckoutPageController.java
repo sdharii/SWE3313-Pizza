@@ -108,12 +108,17 @@ public class CheckoutPageController {
             paymentID = PaymentAccess.savePayment(cashPayment);
         }
         // Placing order
-        int orderID = Order.placeOrder(currentUser.getCustomerID(), paymentID, total);
+        Order order = Order.placeOrder(currentUser.getCustomerID(), paymentID, total);
         // Clear cart
         Cart.clear();
         System.out.println("Checkout successful. Redirecting to Receipt!");
         // Navigate to receipt page
-//        ReceiptPageController.setOrderID(orderID);
-//        Navigation.goTo("receiptpage.fxml");
+        ReceiptPageController.setOrder(order);
+        Navigation.goTo("receiptpage.fxml");
+        // Confirmation Alert
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("Order Confirmed!");
+        alert.setContentText("Your order has been successfully placed. You may review your receipt and order status!");
+        alert.showAndWait();
     }
 }
