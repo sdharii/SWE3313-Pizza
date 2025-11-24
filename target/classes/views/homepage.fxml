@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HomePageController">
+   <top>
+      <VBox prefHeight="147.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #ff3131;">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pizzaLogo.png" />
+                     </image>
+                  </ImageView>
+                  <Region prefHeight="55.0" prefWidth="430.0" />
+                  <Button id="loginButton" fx:id="loginButton" mnemonicParsing="false" onAction="#goToLogin" style="-fx-background-radius: 10; -fx-cursor: hand;" text="Login">
+                     <font>
+                        <Font name="Gadugi Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="10.0" right="10.0" top="2.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="136.0" prefWidth="602.0">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="600.0" pickOnBounds="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../pizzaBanner.png" />
+                     </image>
+                     <effect>
+                        <InnerShadow choke="0.27" height="94.1" radius="46.989999999999995" width="95.86">
+                           <input>
+                              <SepiaTone level="0.0" />
+                           </input>
+                        </InnerShadow>
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <VBox prefHeight="242.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="48.0" prefWidth="600.0" style="-fx-border-color: #ff3131; -fx-border-width: 2;" text="Mom's and Pop's Pizzeria">
+               <font>
+                  <Font name="Gadugi Bold" size="23.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="190.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="190.0" prefWidth="310.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="33.0" prefWidth="310.0" text="Contact Information">
+                           <font>
+                              <Font name="Gadugi Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="680 Arntson Rd, Suite 161" textAlignment="CENTER" wrappingWidth="299.7366828918457">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marietta, GA 30060" textAlignment="CENTER" wrappingWidth="299.7366828918457">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="770-555-1212" textAlignment="CENTER" wrappingWidth="299.7366828918457">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="92.0" stroke="#ff4b4b" strokeType="OUTSIDE" strokeWidth="0.0" text="MomAndPopPizzeria.com" textAlignment="CENTER" wrappingWidth="299.7366828918457">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="190.0" prefWidth="310.0" spacing="10.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="33.0" prefWidth="310.0" text="Operating Hours">
+                           <font>
+                              <Font name="Gadugi Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mon - Thur : 9 AM - 11 PM" textAlignment="CENTER" wrappingWidth="300.5367431640625">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fri - Sat : 11 AM - 12 AM" textAlignment="CENTER" wrappingWidth="300.5367431640625">
+                           <font>
+                              <Font name="Gadugi" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

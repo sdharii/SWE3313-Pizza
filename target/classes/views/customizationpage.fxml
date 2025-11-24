@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CustomizationPageController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #ff3131;">
+               <children>
+                  <ImageView fitHeight="58.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pizzaLogo.png" />
+                     </image>
+                  </ImageView>
+                  <Region prefHeight="55.0" prefWidth="120.0" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Customization Page" wrappingWidth="238.14885711669922">
+                     <font>
+                        <Font name="Gadugi Bold" size="21.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="itemPicture" fitHeight="108.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets bottom="2.0" left="20.0" top="2.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../cus_Pizza.png" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="83.0" prefWidth="340.0">
+                     <children>
+                        <Text fx:id="itemName" strokeType="OUTSIDE" strokeWidth="0.0" text="{Name}" textAlignment="CENTER" wrappingWidth="336.5367488861084">
+                           <font>
+                              <Font name="Gadugi Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="itemDescription" strokeType="OUTSIDE" strokeWidth="0.0" text="{Description}" textAlignment="CENTER" wrappingWidth="339.7367000579834">
+                           <font>
+                              <Font name="Gadugi" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="14.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Button fx:id="addToCartButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addToCart" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-border-width: 2; -fx-background-color: #fffffff; -fx-background-radius: 6; -fx-cursor: hand;" text="{Price} Add to Cart" textAlignment="CENTER">
+                           <font>
+                              <Font name="Gadugi" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="4.0" left="110.0" top="12.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" />
+            <ScrollPane pannable="true" prefHeight="188.0" prefWidth="600.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="599.0">
+                     <children>
+                        <VBox prefHeight="188.0" prefWidth="586.0">
+                           <children>
+                              <VBox fx:id="sizeVbox" prefHeight="68.0" prefWidth="594.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Size Selection" wrappingWidth="277.3367118835449">
+                                       <font>
+                                          <Font name="Gadugi Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="479.2928466796875" endY="4.971027465217048E-6" startX="-100.0" stroke="#b2b2b27a" strokeWidth="2.0" />
+                                    <ChoiceBox fx:id="sizeSelection" onMouseClicked="#updatePrice" prefWidth="240.0" style="-fx-cursor: hand;">
+                                       <VBox.margin>
+                                          <Insets top="6.0" />
+                                       </VBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="crustVbox" prefHeight="68.0" prefWidth="594.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Crust Selection" wrappingWidth="277.3367118835449">
+                                       <font>
+                                          <Font name="Gadugi Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="472.8929443359375" endY="-2.0563602447509766E-5" startX="-100.0" stroke="#b0b0b07a" strokeWidth="2.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Line>
+                                    <ChoiceBox fx:id="crustSelection" onMouseClicked="#updatePrice" prefWidth="240.0" style="-fx-cursor: hand;">
+                                       <VBox.margin>
+                                          <Insets top="6.0" />
+                                       </VBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="sauceVbox" prefHeight="68.0" prefWidth="594.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sauce Selection" wrappingWidth="277.3367118835449">
+                                       <font>
+                                          <Font name="Gadugi Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="472.8929443359375" endY="-2.0563602447509766E-5" startX="-100.0" stroke="#b0b0b07a" strokeWidth="2.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Line>
+                                    <ChoiceBox fx:id="sauceSelection" prefWidth="240.0" style="-fx-cursor: hand;">
+                                       <VBox.margin>
+                                          <Insets top="6.0" />
+                                       </VBox.margin>
+                                    </ChoiceBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="toppingVbox" layoutX="16.0" layoutY="10.0" prefHeight="68.0" prefWidth="594.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Topping Selection" wrappingWidth="277.3367118835449">
+                                       <font>
+                                          <Font name="Gadugi Bold" size="19.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="472.8929443359375" endY="-2.0563602447509766E-5" startX="-100.0" stroke="#b0b0b07a" strokeWidth="2.0">
+                                       <VBox.margin>
+                                          <Insets top="2.0" />
+                                       </VBox.margin>
+                                    </Line>
+                                    <TilePane fx:id="toppingSelection" prefHeight="200.0" prefRows="2" prefWidth="200.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Cheese">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets left="4.0" right="10.0" top="2.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Onion">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets left="4.0" right="10.0" top="2.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="126.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pineapple">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets left="4.0" right="10.0" top="2.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="236.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Jalepeno">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets left="4.0" right="10.0" top="2.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="347.0" layoutY="10.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Olives">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets left="4.0" right="10.0" top="2.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Pepperoni">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets right="10.0" top="10.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="128.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Chicken">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets right="10.0" top="10.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="243.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Italian Sausage">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets right="10.0" top="10.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="357.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Bacon">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets right="10.0" top="10.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                          <CheckBox layoutX="472.0" layoutY="12.0" mnemonicParsing="false" onAction="#updatePrice" prefHeight="38.0" prefWidth="100.0" style="-fx-border-color: #ff3131; -fx-border-radius: 6; -fx-cursor: hand;" text="Beef">
+                                             <font>
+                                                <Font name="Gadugi" size="12.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="4.0" />
+                                             </padding>
+                                             <TilePane.margin>
+                                                <Insets right="10.0" top="10.0" />
+                                             </TilePane.margin>
+                                          </CheckBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="6.0" top="6.0" />
+                                       </VBox.margin>
+                                    </TilePane>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="8.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="6.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <HBox prefHeight="48.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="decreaseButton" graphicTextGap="0.0" mnemonicParsing="false" onAction="#decreaseQuantity" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/decreaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
+                     <HBox.margin>
+                        <Insets left="10.0" right="10.0" top="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Text fx:id="quantityText" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER">
+                     <font>
+                        <Font name="Gadugi" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="4.0" />
+                     </HBox.margin></Text>
+                  <Button fx:id="increaseButton" graphicTextGap="0.0" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#increaseQuantity" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/increaseButton.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
+                     <HBox.margin>
+                        <Insets left="12.0" right="10.0" top="4.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="backArrow" graphicTextGap="0.0" layoutX="91.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToMenu" prefHeight="33.0" prefWidth="34.0" style="-fx-background-image: url('/backArrow.png'); -fx-background-size: cover; -fx-background-position: center; -fx-background-color: #f4f4f4; -fx-cursor: hand;">
+                     <HBox.margin>
+                        <Insets left="420.0" top="4.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
