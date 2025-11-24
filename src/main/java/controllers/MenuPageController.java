@@ -32,6 +32,10 @@ public class MenuPageController implements Initializable {
         System.out.print("Login button was clicked!");
         Navigation.goTo("loginpage.fxml");
     }
+    @FXML void goToCart (ActionEvent event) throws IOException {
+        System.out.println("Going to cart...");
+        Navigation.goTo("cartpage.fxml");
+    }
 //    @FXML
 //    private void goToCustomization(ActionEvent event) throws IOException {
 //        System.out.println("Heading to customization page...");
